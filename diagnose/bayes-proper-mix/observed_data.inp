@@ -1,0 +1,5 @@
+TITLE: Your title goes here
+DATA: FILE = "observed_data.dat";
+VARIABLE: 
+NAMES = Y1 Y2 Y3 Y4 Xcom1; 
+MISSING=.;

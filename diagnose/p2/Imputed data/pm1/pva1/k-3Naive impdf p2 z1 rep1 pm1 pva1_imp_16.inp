@@ -1,0 +1,82 @@
+TITLE: Code for Naive FMM model for data condition z=1
+
+
+DATA:
+FILE = impdf p2 z1 rep1 pm1 pva1_imp_16.dat;
+
+
+VARIABLE:
+NAMES = Y1 Y2 Y3  Xcom1 subpop;
+USEV = Y1 Y2 Y3;
+AUXILIARY = subpop;
+CLASSES = c(3);
+MISSING = .;
+
+
+ANALYSIS: 
+TYPE = MIXTURE;
+Estimator = ML;
+INFORMATION = obs;
+STARTS = 20 8;
+
+
+MODEL: 
+
+
+     %OVERALL%
+
+     [ c#1*-0.49813 ];
+     [ c#2*-0.34862 ];
+
+     %C#1%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*-0.49580 ];
+     [ y2*-0.10276 ];
+     [ y3*0.12932 ];
+
+     y1*0.89716;
+     y2*1.03380;
+     y3*1.46902;
+
+     %C#2%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*1.45468 ];
+     [ y2*0.74164 ];
+     [ y3*2.34210 ];
+
+     y1*1.07750;
+     y2*1.13158;
+     y3*1.39543;
+
+     %C#3%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*2.31091 ];
+     [ y2*0.15089 ];
+     [ y3*0.04454 ];
+
+     y1*1.31659;
+     y2*0.75590;
+     y3*1.17789;
+
+
+
+
+OUTPUT:
+tech1;
+svalues;
+tech3;
+
+
+SAVEDATA:

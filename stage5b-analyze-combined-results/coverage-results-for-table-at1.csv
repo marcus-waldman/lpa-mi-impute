@@ -1,0 +1,25 @@
+"Mixing","Separation","Strategy","Small.Sample.Cov.Means","Large.Sample.Cov.Means","Small.Sample.Cov.Lodds","Large.Sample.Cov.Lodds"
+"Equal Mix.","Weakly Separated","Complete data",0.918583333333333,0.950208333333333,0.92575,0.98525
+"Equal Mix.","Weakly Separated","FIML",0.820292781423523,0.644833333333333,0.874053508329127,0.818
+"Equal Mix.","Weakly Separated","EMS-MVN.",0.95675,0.822416666666667,0.977,0.81075
+"Equal Mix.","Weakly Separated","MICE-PMM",0.945041666666667,0.808791666666667,0.98175,0.845
+"Equal Mix.","Weakly Separated","MICE-CART",0.949166666666667,0.92675,0.9815,0.945
+"Equal Mix.","Weakly Separated","MICE-RF",0.954875,0.892708333333333,0.984,0.90925
+"Equal Mix.","Strongly Separated","Complete data",0.943791666666667,0.943333333333333,0.99775,0.99925
+"Equal Mix.","Strongly Separated","FIML",0.822083333333333,0.536291666666667,0.94875,0.775
+"Equal Mix.","Strongly Separated","EMS-MVN.",0.927,0.744625,0.9275,0.7015
+"Equal Mix.","Strongly Separated","MICE-PMM",0.907375,0.717291666666667,0.9285,0.749
+"Equal Mix.","Strongly Separated","MICE-CART",0.930041666666667,0.906958333333333,0.973,0.91675
+"Equal Mix.","Strongly Separated","MICE-RF",0.928166666666667,0.858166666666667,0.97025,0.87075
+"Unequal Mix.","Weakly Separated","Complete data",0.873619737750173,0.936916666666667,0.777691511387164,0.9425
+"Unequal Mix.","Weakly Separated","FIML",0.759771689497717,0.6795,0.701369863013699,0.85025
+"Unequal Mix.","Weakly Separated","EMS-MVN.",0.958375,0.877083333333333,0.9775,0.898
+"Unequal Mix.","Weakly Separated","MICE-PMM",0.947208333333333,0.854458333333333,0.95975,0.92125
+"Unequal Mix.","Weakly Separated","MICE-CART",0.947125,0.938333333333333,0.92725,0.96475
+"Unequal Mix.","Weakly Separated","MICE-RF",0.955041666666667,0.916916666666667,0.9405,0.95525
+"Unequal Mix.","Strongly Separated","Complete data",0.927791666666667,0.948125,0.96075,0.99275
+"Unequal Mix.","Strongly Separated","FIML",0.819444444444444,0.613375,0.922922922922923,0.88125
+"Unequal Mix.","Strongly Separated","EMS-MVN.",0.951958333333333,0.830166666666667,0.98675,0.741
+"Unequal Mix.","Strongly Separated","MICE-PMM",0.932916666666667,0.795375,0.9855,0.845
+"Unequal Mix.","Strongly Separated","MICE-CART",0.942625,0.929875,0.97925,0.95825
+"Unequal Mix.","Strongly Separated","MICE-RF",0.946125,0.899833333333333,0.979,0.95375

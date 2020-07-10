@@ -1,0 +1,459 @@
+Mplus VERSION 8
+MUTHEN & MUTHEN
+01/07/2019   9:41 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Your title goes here
+
+  DATA: FILE = "observed_data.dat";
+
+  VARIABLE:
+  NAMES = Y1 Y2 Y3 Y4 Xcom1;
+  MISSING=.;
+  CLASSES = c(3);
+
+  ANALYSIS:
+  TYPE = mixture;
+  STARTS =  10 4;
+
+
+  Model:
+
+  %OVERALL%
+  Y1-Y4 on Xcom1;
+  C on Xcom1;
+
+
+  %c#1%
+  Y1-Y4 on Xcom1;
+
+  %c#2%
+  Y1-Y4 on Xcom1;
+
+  %c#3%
+  Y1-Y4 on Xcom1;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Your title goes here
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         300
+
+Number of dependent variables                                    4
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4
+
+Observed independent variables
+   XCOM1
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                         10
+  Number of final stage optimizations                            4
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  observed_data.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            15
+     Number of y missing data patterns          15
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              Y1            Y2            Y3            Y4            XCOM1
+              ________      ________      ________      ________      ________
+ Y1             0.743
+ Y2             0.590         0.717
+ Y3             0.610         0.597         0.743
+ Y4             0.603         0.597         0.600         0.753
+ XCOM1          0.743         0.717         0.743         0.753         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    1.120      -0.120      -2.504    0.45%       0.136      0.835      1.179
+             223.000       1.448       0.032       5.040    0.45%       1.406      2.239
+     Y2                    1.331       0.301      -2.092    0.47%       0.049      0.970      1.293
+             215.000       1.995      -0.279       5.374    0.47%       1.637      2.439
+     Y3                    0.365      -0.040      -2.696    0.45%      -0.526      0.175      0.387
+             223.000       1.038       0.052       3.322    0.45%       0.593      1.172
+     Y4                    0.761       0.312      -2.550    0.44%      -0.518      0.252      0.593
+             226.000       2.147      -0.334       4.684    0.44%       1.063      2.050
+     XCOM1                 0.002       0.197      -2.455    0.33%      -0.919     -0.304      0.014
+             300.000       1.192      -0.177       3.362    0.33%       0.247      0.849
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -1319.883  127215           9
+           -1319.883  unperturbed      0
+           -1319.883  285380           1
+           -1357.851  415931           10
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       38
+
+Loglikelihood
+
+          H0 Value                       -1319.883
+          H0 Scaling Correction Factor      0.9961
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                    2715.766
+          Bayesian (BIC)                  2856.510
+          Sample-Size Adjusted BIC        2735.996
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1         99.02373          0.33008
+       2        103.76266          0.34588
+       3         97.21361          0.32405
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1         99.02360          0.33008
+       2        103.76281          0.34588
+       3         97.21359          0.32405
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              109          0.36333
+       2               90          0.30000
+       3              101          0.33667
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.659
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3
+
+    1   0.781    0.125    0.094
+    2   0.052    0.901    0.047
+    3   0.091    0.089    0.819
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3
+
+    1   0.860    0.047    0.093
+    2   0.131    0.782    0.087
+    3   0.105    0.043    0.851
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3
+
+    1      2.224   -0.674    0.000
+    2      0.411    2.194    0.000
+    3     -2.088   -2.980    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Y1         ON
+    XCOM1              0.306      0.163      1.878      0.060
+
+ Y2         ON
+    XCOM1              0.279      0.178      1.566      0.117
+
+ Y3         ON
+    XCOM1              0.395      0.163      2.420      0.016
+
+ Y4         ON
+    XCOM1              0.291      0.134      2.178      0.029
+
+ Y2       WITH
+    Y1                -0.156      0.072     -2.156      0.031
+
+ Y3       WITH
+    Y1                -0.089      0.069     -1.298      0.194
+    Y2                -0.184      0.069     -2.660      0.008
+
+ Y4       WITH
+    Y1                -0.167      0.069     -2.428      0.015
+    Y2                -0.183      0.081     -2.273      0.023
+    Y3                -0.209      0.071     -2.924      0.003
+
+ Intercepts
+    Y1                 0.156      0.137      1.136      0.256
+    Y2                 0.003      0.145      0.023      0.982
+    Y3                 0.245      0.127      1.928      0.054
+    Y4                 0.201      0.130      1.541      0.123
+
+ Residual Variances
+    Y1                 0.916      0.088     10.463      0.000
+    Y2                 0.670      0.081      8.282      0.000
+    Y3                 0.839      0.075     11.134      0.000
+    Y4                 0.800      0.103      7.738      0.000
+
+Latent Class 2
+
+ Y1         ON
+    XCOM1              0.314      0.163      1.929      0.054
+
+ Y2         ON
+    XCOM1              0.564      0.112      5.026      0.000
+
+ Y3         ON
+    XCOM1              0.329      0.119      2.756      0.006
+
+ Y4         ON
+    XCOM1              0.458      0.087      5.261      0.000
+
+ Y2       WITH
+    Y1                -0.156      0.072     -2.156      0.031
+
+ Y3       WITH
+    Y1                -0.089      0.069     -1.298      0.194
+    Y2                -0.184      0.069     -2.660      0.008
+
+ Y4       WITH
+    Y1                -0.167      0.069     -2.428      0.015
+    Y2                -0.183      0.081     -2.273      0.023
+    Y3                -0.209      0.071     -2.924      0.003
+
+ Intercepts
+    Y1                 1.238      0.188      6.575      0.000
+    Y2                 2.136      0.171     12.509      0.000
+    Y3                -0.020      0.172     -0.116      0.907
+    Y4                -0.361      0.153     -2.359      0.018
+
+ Residual Variances
+    Y1                 0.916      0.088     10.463      0.000
+    Y2                 0.670      0.081      8.282      0.000
+    Y3                 0.839      0.075     11.134      0.000
+    Y4                 0.800      0.103      7.738      0.000
+
+Latent Class 3
+
+ Y1         ON
+    XCOM1              0.308      0.107      2.878      0.004
+
+ Y2         ON
+    XCOM1              0.295      0.072      4.096      0.000
+
+ Y3         ON
+    XCOM1              0.435      0.128      3.394      0.001
+
+ Y4         ON
+    XCOM1              0.345      0.092      3.734      0.000
+
+ Y2       WITH
+    Y1                -0.156      0.072     -2.156      0.031
+
+ Y3       WITH
+    Y1                -0.089      0.069     -1.298      0.194
+    Y2                -0.184      0.069     -2.660      0.008
+
+ Y4       WITH
+    Y1                -0.167      0.069     -2.428      0.015
+    Y2                -0.183      0.081     -2.273      0.023
+    Y3                -0.209      0.071     -2.924      0.003
+
+ Intercepts
+    Y1                 1.572      0.126     12.502      0.000
+    Y2                 0.906      0.101      8.932      0.000
+    Y3                 0.627      0.136      4.605      0.000
+    Y4                 2.352      0.140     16.853      0.000
+
+ Residual Variances
+    Y1                 0.916      0.088     10.463      0.000
+    Y2                 0.670      0.081      8.282      0.000
+    Y3                 0.839      0.075     11.134      0.000
+    Y4                 0.800      0.103      7.738      0.000
+
+Categorical Latent Variables
+
+ C#1        ON
+    XCOM1             -0.309      0.179     -1.728      0.084
+
+ C#2        ON
+    XCOM1              0.589      0.214      2.754      0.006
+
+ Intercepts
+    C#1               -0.065      0.199     -0.329      0.742
+    C#2               -0.051      0.233     -0.218      0.827
+
+
+LOGISTIC REGRESSION ODDS RATIO RESULTS
+
+Categorical Latent Variables
+
+ C#1      ON
+    XCOM1              0.734
+
+ C#2      ON
+    XCOM1              1.803
+
+
+ALTERNATIVE PARAMETERIZATIONS FOR THE CATEGORICAL LATENT VARIABLE REGRESSION
+
+Parameterization using Reference Class 1
+
+ C#2      ON
+    XCOM1              0.899      0.217      4.150      0.000
+
+ C#3      ON
+    XCOM1              0.309      0.179      1.728      0.084
+
+ Intercepts
+    C#2                0.014      0.264      0.055      0.956
+    C#3                0.065      0.199      0.329      0.742
+
+Parameterization using Reference Class 2
+
+ C#1      ON
+    XCOM1             -0.899      0.217     -4.150      0.000
+
+ C#3      ON
+    XCOM1             -0.589      0.214     -2.754      0.006
+
+ Intercepts
+    C#1               -0.014      0.264     -0.055      0.956
+    C#3                0.051      0.233      0.218      0.827
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.883E-04
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  21:41:41
+        Ending Time:  21:41:43
+       Elapsed Time:  00:00:02
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen

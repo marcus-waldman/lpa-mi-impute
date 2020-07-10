@@ -1,0 +1,400 @@
+Mplus VERSION 8
+MUTHEN & MUTHEN
+01/07/2019   9:33 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Your title goes here
+
+  DATA: FILE = "observed_data.dat";
+
+  VARIABLE:
+  NAMES = Y1 Y2 Y3 Y4 Xcom1;
+  MISSING=.;
+  CLASSES = c(4);
+
+  ANALYSIS:
+  TYPE = mixture;
+  PROCESSORS = 4;
+  CHAINS = 4;
+  ESTIMATOR = bayes;
+  ALGORITHM=GIBBS(RW)
+
+
+  Model:
+
+  %OVERALL%
+  Y1-Y4 on Xcom1;
+
+
+  %c#1%
+  Y1-Y4 on Xcom1;
+
+  %c#2%
+  Y1-Y4 on Xcom1;
+
+  %c#3%
+  Y1-Y4 on Xcom1;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Your title goes here
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         300
+
+Number of dependent variables                                    4
+Number of independent variables                                  1
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4
+
+Observed independent variables
+   XCOM1
+
+Categorical latent variables
+   C
+
+
+Estimator                                                    BAYES
+Specifications for Bayesian Estimation
+  Point estimate                                            MEDIAN
+  Number of Markov chain Monte Carlo (MCMC) chains               4
+  Random seed for the first chain                                0
+  Starting value information                           UNPERTURBED
+  Treatment of categorical mediator                         LATENT
+  Algorithm used for Markov chain Monte Carlo            GIBBS(RW)
+  Convergence criterion                                  0.500D-01
+  Maximum number of iterations                               50000
+  K-th iteration used for thinning                               1
+
+Input data file(s)
+  observed_data.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+     Number of missing data patterns            15
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Y1            Y2            Y3            Y4            XCOM1
+              ________      ________      ________      ________      ________
+ Y1             0.743
+ Y2             0.590         0.717
+ Y3             0.610         0.597         0.743
+ Y4             0.603         0.597         0.600         0.753
+ XCOM1          0.743         0.717         0.743         0.753         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    1.120      -0.120      -2.504    0.45%       0.136      0.835      1.179
+             223.000       1.448       0.032       5.040    0.45%       1.406      2.239
+     Y2                    1.331       0.301      -2.092    0.47%       0.049      0.970      1.293
+             215.000       1.995      -0.279       5.374    0.47%       1.637      2.439
+     Y3                    0.365      -0.040      -2.696    0.45%      -0.526      0.175      0.387
+             223.000       1.038       0.052       3.322    0.45%       0.593      1.172
+     Y4                    0.761       0.312      -2.550    0.44%      -0.518      0.252      0.593
+             226.000       2.147      -0.334       4.684    0.44%       1.063      2.050
+     XCOM1                 0.002       0.197      -2.455    0.33%      -0.919     -0.304      0.014
+             300.000       1.192      -0.177       3.362    0.33%       0.247      0.849
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     USE THE FBITERATIONS OPTION TO INCREASE THE NUMBER OF ITERATIONS BY A FACTOR
+     OF AT LEAST TWO TO CHECK CONVERGENCE AND THAT THE PSR VALUE DOES NOT INCREASE.
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                              45
+
+Bayesian Posterior Predictive Checking using Chi-Square
+
+          95% Confidence Interval for the Difference Between
+          the Observed and the Replicated Chi-Square Values
+
+                                -35.886            29.790
+
+          Posterior Predictive P-Value              0.564
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1         51.71960          0.17240
+       2         67.69701          0.22566
+       3         94.22330          0.31408
+       4         85.51472          0.28505
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1         48.80953          0.16270
+       2         67.37375          0.22458
+       3         97.00178          0.32334
+       4         86.81494          0.28938
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1               45          0.14963
+       2               65          0.21807
+       3              102          0.33919
+       4               88          0.29311
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.701
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4
+
+    1   0.788    0.029    0.180    0.003
+    2   0.025    0.793    0.136    0.046
+    3   0.112    0.107    0.760    0.021
+    4   0.004    0.042    0.027    0.927
+
+
+MODEL RESULTS
+
+                                Posterior  One-Tailed         95% C.I.
+                    Estimate       S.D.      P-Value   Lower 2.5%  Upper 2.5%  Significance
+
+Latent Class 1
+
+ Y1         ON
+    XCOM1              0.148       0.303      0.311      -0.436       0.755
+
+ Y2         ON
+    XCOM1             -0.144       0.326      0.338      -0.783       0.466
+
+ Y3         ON
+    XCOM1              0.630       0.287      0.040      -0.078       1.064
+
+ Y4         ON
+    XCOM1              0.420       0.321      0.108      -0.238       1.016
+
+ Y2       WITH
+    Y1                -0.093       0.079      0.101      -0.259       0.060
+
+ Y3       WITH
+    Y1                -0.057       0.078      0.221      -0.220       0.081
+    Y2                -0.131       0.070      0.031      -0.270       0.010
+
+ Y4       WITH
+    Y1                -0.221       0.090      0.001      -0.436      -0.079      *
+    Y2                -0.338       0.087      0.000      -0.485      -0.165      *
+    Y3                -0.218       0.084      0.013      -0.370      -0.049      *
+
+ Intercepts
+    Y1                 0.345       0.285      0.119      -0.230       0.893
+    Y2                 0.021       0.252      0.464      -0.436       0.548
+    Y3                 0.101       0.239      0.330      -0.329       0.608
+    Y4                 0.033       0.288      0.449      -0.512       0.624
+
+ Residual Variances
+    Y1                 0.995       0.121      0.000       0.780       1.242      *
+    Y2                 0.717       0.098      0.000       0.539       0.927      *
+    Y3                 0.802       0.086      0.000       0.649       0.978      *
+    Y4                 0.968       0.140      0.000       0.742       1.280      *
+
+Latent Class 2
+
+ Y1         ON
+    XCOM1              0.147       0.267      0.278      -0.373       0.684
+
+ Y2         ON
+    XCOM1              0.725       0.210      0.000       0.363       1.190      *
+
+ Y3         ON
+    XCOM1              0.493       0.196      0.006       0.132       0.911      *
+
+ Y4         ON
+    XCOM1              0.181       0.260      0.244      -0.431       0.593
+
+ Y2       WITH
+    Y1                -0.093       0.079      0.101      -0.259       0.060
+
+ Y3       WITH
+    Y1                -0.057       0.078      0.221      -0.220       0.081
+    Y2                -0.131       0.070      0.031      -0.270       0.010
+
+ Y4       WITH
+    Y1                -0.221       0.090      0.001      -0.436      -0.079      *
+    Y2                -0.338       0.087      0.000      -0.485      -0.165      *
+    Y3                -0.218       0.084      0.013      -0.370      -0.049      *
+
+ Intercepts
+    Y1                 1.238       0.245      0.000       0.733       1.715      *
+    Y2                 2.297       0.274      0.000       1.804       2.900      *
+    Y3                -0.270       0.223      0.108      -0.730       0.168
+    Y4                 0.003       0.329      0.496      -0.502       0.780
+
+ Residual Variances
+    Y1                 0.995       0.121      0.000       0.780       1.242      *
+    Y2                 0.717       0.098      0.000       0.539       0.927      *
+    Y3                 0.802       0.086      0.000       0.649       0.978      *
+    Y4                 0.968       0.140      0.000       0.742       1.280      *
+
+Latent Class 3
+
+ Y1         ON
+    XCOM1              0.744       0.168      0.000       0.404       1.077      *
+
+ Y2         ON
+    XCOM1              1.071       0.116      0.000       0.838       1.300      *
+
+ Y3         ON
+    XCOM1              0.117       0.135      0.182      -0.137       0.401
+
+ Y4         ON
+    XCOM1              0.257       0.129      0.026      -0.004       0.503
+
+ Y2       WITH
+    Y1                -0.093       0.079      0.101      -0.259       0.060
+
+ Y3       WITH
+    Y1                -0.057       0.078      0.221      -0.220       0.081
+    Y2                -0.131       0.070      0.031      -0.270       0.010
+
+ Y4       WITH
+    Y1                -0.221       0.090      0.001      -0.436      -0.079      *
+    Y2                -0.338       0.087      0.000      -0.485      -0.165      *
+    Y3                -0.218       0.084      0.013      -0.370      -0.049      *
+
+ Intercepts
+    Y1                 0.585       0.247      0.010       0.097       1.079      *
+    Y2                 0.905       0.224      0.000       0.453       1.352      *
+    Y3                 0.351       0.188      0.033      -0.026       0.720
+    Y4                 0.031       0.202      0.437      -0.353       0.445
+
+ Residual Variances
+    Y1                 0.995       0.121      0.000       0.780       1.242      *
+    Y2                 0.717       0.098      0.000       0.539       0.927      *
+    Y3                 0.802       0.086      0.000       0.649       0.978      *
+    Y4                 0.968       0.140      0.000       0.742       1.280      *
+
+Latent Class 4
+
+ Y1         ON
+    XCOM1              0.351       0.145      0.007       0.073       0.637      *
+
+ Y2         ON
+    XCOM1              0.335       0.124      0.005       0.091       0.580      *
+
+ Y3         ON
+    XCOM1              0.384       0.134      0.002       0.115       0.643      *
+
+ Y4         ON
+    XCOM1              0.298       0.129      0.012       0.048       0.551      *
+
+ Y2       WITH
+    Y1                -0.093       0.079      0.101      -0.259       0.060
+
+ Y3       WITH
+    Y1                -0.057       0.078      0.221      -0.220       0.081
+    Y2                -0.131       0.070      0.031      -0.270       0.010
+
+ Y4       WITH
+    Y1                -0.221       0.090      0.001      -0.436      -0.079      *
+    Y2                -0.338       0.087      0.000      -0.485      -0.165      *
+    Y3                -0.218       0.084      0.013      -0.370      -0.049      *
+
+ Intercepts
+    Y1                 1.563       0.159      0.000       1.242       1.875      *
+    Y2                 0.894       0.134      0.000       0.636       1.160      *
+    Y3                 0.697       0.148      0.000       0.406       0.993      *
+    Y4                 2.391       0.163      0.000       2.062       2.712      *
+
+ Residual Variances
+    Y1                 0.995       0.121      0.000       0.780       1.242      *
+    Y2                 0.717       0.098      0.000       0.539       0.927      *
+    Y3                 0.802       0.086      0.000       0.649       0.978      *
+    Y4                 0.968       0.140      0.000       0.742       1.280      *
+
+Categorical Latent Variables
+
+ Means
+    C#1               -0.496       0.261      0.023      -1.047      -0.011      *
+    C#2               -0.233       0.295      0.208      -0.834       0.298
+    C#3                0.096       0.247      0.352      -0.410       0.557
+
+Class Proportions
+
+    Class 1            0.172       0.034      0.000       0.108       0.243
+    Class 2            0.226       0.053      0.000       0.135       0.332
+    Class 3            0.314       0.055      0.000       0.208       0.419
+    Class 4            0.285       0.035      0.000       0.215       0.352
+
+
+DIAGRAM INFORMATION
+
+  Mplus diagrams are currently not available for Mixture analysis.
+  No diagram output was produced.
+
+
+     Beginning Time:  21:33:23
+        Ending Time:  21:33:25
+       Elapsed Time:  00:00:02
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen

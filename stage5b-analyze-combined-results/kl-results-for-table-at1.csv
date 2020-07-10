@@ -1,0 +1,25 @@
+"Mixing","Separation","Strategy","KL.Small.N","KL.Large.N"
+"Unequal Mix.","Weakly Separated","FIML",0,0
+"Unequal Mix.","Weakly Separated","Pattern Mixture Model",-1309.04348554261,-1767.51685031851
+"Unequal Mix.","Weakly Separated","EMS-MVN.",79.8972777643841,57.4970672336997
+"Unequal Mix.","Weakly Separated","MICE-PMM",67.3891858646807,59.7929519321136
+"Unequal Mix.","Weakly Separated","MICE-CART",36.0206660056424,73.3400694058336
+"Unequal Mix.","Weakly Separated","MICE-RF",51.8861892054856,72.7553868655755
+"Unequal Mix.","Strongly Separated","FIML",0,0
+"Unequal Mix.","Strongly Separated","Pattern Mixture Model",-583.220814658558,-513.647309162944
+"Unequal Mix.","Strongly Separated","EMS-MVN.",57.0315175433513,14.3240575256171
+"Unequal Mix.","Strongly Separated","MICE-PMM",57.4241052881605,37.1817350656667
+"Unequal Mix.","Strongly Separated","MICE-CART",50.9061956808298,73.6303347027014
+"Unequal Mix.","Strongly Separated","MICE-RF",56.3037609235511,68.2817616106929
+"Equal Mix.","Weakly Separated","FIML",0,0
+"Equal Mix.","Weakly Separated","Pattern Mixture Model",-1450.21608370069,-1914.61196661426
+"Equal Mix.","Weakly Separated","EMS-MVN.",74.6680950395364,42.0413926889717
+"Equal Mix.","Weakly Separated","MICE-PMM",60.6792363796994,40.7429825689421
+"Equal Mix.","Weakly Separated","MICE-CART",44.7348142641696,71.273707457049
+"Equal Mix.","Weakly Separated","MICE-RF",57.4707044843933,68.8854717969911
+"Equal Mix.","Strongly Separated","FIML",0,0
+"Equal Mix.","Strongly Separated","Pattern Mixture Model",-720.051130362045,-766.946343514955
+"Equal Mix.","Strongly Separated","EMS-MVN.",36.0183313221073,-8.94827509346262
+"Equal Mix.","Strongly Separated","MICE-PMM",33.8715117735115,10.2061169521589
+"Equal Mix.","Strongly Separated","MICE-CART",46.0922106257875,73.9294961822906
+"Equal Mix.","Strongly Separated","MICE-RF",48.1106442154303,66.3754072476054

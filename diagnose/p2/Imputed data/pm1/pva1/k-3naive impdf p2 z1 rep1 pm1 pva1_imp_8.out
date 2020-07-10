@@ -1,0 +1,721 @@
+Mplus VERSION 8
+MUTHEN & MUTHEN
+10/08/2018   7:34 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Code for Naive FMM model for data condition z=1
+
+
+  DATA:
+  FILE = impdf p2 z1 rep1 pm1 pva1_imp_8.dat;
+
+
+  VARIABLE:
+  NAMES = Y1 Y2 Y3  Xcom1 subpop;
+  USEV = Y1 Y2 Y3;
+  AUXILIARY = subpop;
+  CLASSES = c(3);
+  MISSING = .;
+
+
+  ANALYSIS:
+  TYPE = MIXTURE;
+  Estimator = ML;
+  INFORMATION = obs;
+  STARTS = 20 8;
+
+
+  MODEL:
+
+
+       %OVERALL%
+
+       [ c#1*-0.26616 ];
+       [ c#2*-0.41975 ];
+
+       %C#1%
+
+       y1 WITH y2@0;
+       y1 WITH y3@0;
+       y2 WITH y3@0;
+
+       [ y1*-0.16091 ];
+       [ y2*-0.07775 ];
+       [ y3*-0.02318 ];
+
+       y1*1.17484;
+       y2*0.84431;
+       y3*1.41308;
+
+       %C#2%
+
+       y1 WITH y2@0;
+       y1 WITH y3@0;
+       y2 WITH y3@0;
+
+       [ y1*1.32659 ];
+       [ y2*0.90087 ];
+       [ y3*2.39729 ];
+
+       y1*0.95764;
+       y2*0.93659;
+       y3*1.23451;
+
+       %C#3%
+
+       y1 WITH y2@0;
+       y1 WITH y3@0;
+       y2 WITH y3@0;
+
+       [ y1*2.58563 ];
+       [ y2*0.09150 ];
+       [ y3*0.28377 ];
+
+       y1*1.01456;
+       y2*0.98852;
+       y3*1.55070;
+
+
+
+
+  OUTPUT:
+  tech1;
+  svalues;
+  tech3;
+
+
+  SAVEDATA:
+
+
+
+*** WARNING in MODEL command
+  All variables are uncorrelated with all other variables within class.
+  Check that this is what is intended.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Code for Naive FMM model for data condition z=1
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         500
+
+Number of dependent variables                                    3
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3
+
+Observed auxiliary variables
+   SUBPOP
+
+Categorical latent variables
+   C
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                         20
+  Number of final stage optimizations                            8
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+
+Input data file(s)
+  impdf p2 z1 rep1 pm1 pva1_imp_8.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+     Number of y missing data patterns           1
+     Number of u missing data patterns           0
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR Y
+
+
+           Covariance Coverage
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1             1.000
+ Y2             1.000         1.000
+ Y3             1.000         1.000         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Y1                    1.314      -0.136      -2.760    0.20%      -0.113      0.992      1.389
+             500.000       2.364      -0.360       5.162    0.20%       1.788      2.670
+     Y2                    0.234       0.075      -2.748    0.20%      -0.691     -0.082      0.219
+             500.000       1.167      -0.172       3.570    0.20%       0.501      1.174
+     Y3                    0.762       0.256      -3.826    0.20%      -0.578      0.182      0.621
+             500.000       2.530      -0.202       5.723    0.20%       1.041      2.175
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -2575.004  285380           1
+           -2575.004  93468            3
+           -2576.042  76974            16
+           -2576.042  27071            15
+           -2576.042  107446           12
+           -2576.042  939021           8
+           -2576.042  unperturbed      0
+           -2576.042  195873           6
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       20
+
+Loglikelihood
+
+          H0 Value                       -2575.004
+
+Information Criteria
+
+          Akaike (AIC)                    5190.008
+          Bayesian (BIC)                  5274.300
+          Sample-Size Adjusted BIC        5210.819
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        133.12094          0.26624
+       2        102.64752          0.20530
+       3        264.23153          0.52846
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        133.12094          0.26624
+       2        102.64752          0.20530
+       3        264.23153          0.52846
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              134          0.26800
+       2              104          0.20800
+       3              262          0.52400
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.579
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3
+
+    1   0.799    0.018    0.182
+    2   0.030    0.738    0.231
+    3   0.087    0.089    0.824
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3
+
+    1   0.805    0.024    0.172
+    2   0.024    0.748    0.228
+    3   0.092    0.091    0.817
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3
+
+    1      1.544   -1.987    0.000
+    2     -2.245    1.190    0.000
+    3     -2.179   -2.194    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Y1       WITH
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+
+ Y2       WITH
+    Y3                 0.000      0.000    999.000    999.000
+
+ Means
+    Y1                -0.354      0.212     -1.670      0.095
+    Y2                -0.168      0.142     -1.179      0.238
+    Y3                 0.045      0.162      0.280      0.779
+
+ Variances
+    Y1                 1.044      0.235      4.447      0.000
+    Y2                 0.913      0.171      5.333      0.000
+    Y3                 1.445      0.262      5.517      0.000
+
+Latent Class 2
+
+ Y1       WITH
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+
+ Y2       WITH
+    Y3                 0.000      0.000    999.000    999.000
+
+ Means
+    Y1                 2.828      0.223     12.695      0.000
+    Y2                -0.159      0.156     -1.018      0.309
+    Y3                -0.256      0.171     -1.502      0.133
+
+ Variances
+    Y1                 0.991      0.270      3.671      0.000
+    Y2                 0.819      0.156      5.243      0.000
+    Y3                 0.929      0.260      3.569      0.000
+
+Latent Class 3
+
+ Y1       WITH
+    Y2                 0.000      0.000    999.000    999.000
+    Y3                 0.000      0.000    999.000    999.000
+
+ Y2       WITH
+    Y3                 0.000      0.000    999.000    999.000
+
+ Means
+    Y1                 1.566      0.127     12.338      0.000
+    Y2                 0.590      0.097      6.098      0.000
+    Y3                 1.518      0.241      6.287      0.000
+
+ Variances
+    Y1                 1.206      0.212      5.678      0.000
+    Y2                 1.162      0.124      9.370      0.000
+    Y3                 2.466      0.326      7.570      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1               -0.686      0.367     -1.868      0.062
+    C#2               -0.946      0.395     -2.397      0.017
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.127E-01
+       (ratio of smallest to largest eigenvalue)
+
+
+MODEL COMMAND WITH FINAL ESTIMATES USED AS STARTING VALUES
+
+     %OVERALL%
+
+     [ c#1*-0.68557 ];
+     [ c#2*-0.94552 ];
+
+     %C#1%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*-0.35399 ];
+     [ y2*-0.16784 ];
+     [ y3*0.04526 ];
+
+     y1*1.04404;
+     y2*0.91284;
+     y3*1.44550;
+
+     %C#2%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*2.82811 ];
+     [ y2*-0.15906 ];
+     [ y3*-0.25625 ];
+
+     y1*0.99118;
+     y2*0.81947;
+     y3*0.92883;
+
+     %C#3%
+
+     y1 WITH y2@0;
+     y1 WITH y3@0;
+     y2 WITH y3@0;
+
+     [ y1*1.56567 ];
+     [ y2*0.58991 ];
+     [ y3*1.51786 ];
+
+     y1*1.20597;
+     y2*1.16184;
+     y3*2.46582;
+
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+                    1             2             3
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1                 4
+ Y2                 0             5
+ Y3                 0             0             6
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+                    7             8             9
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1                10
+ Y2                 0            11
+ Y3                 0             0            12
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+                   13            14            15
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1                16
+ Y2                 0            17
+ Y3                 0             0            18
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3
+              ________      ________      ________
+                   19            20             0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+               -0.161        -0.078        -0.023
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1             1.175
+ Y2             0.000         0.844
+ Y3             0.000         0.000         1.413
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+                1.327         0.901         2.397
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1             0.958
+ Y2             0.000         0.937
+ Y3             0.000         0.000         1.235
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+           NU
+              Y1            Y2            Y3
+              ________      ________      ________
+                2.586         0.091         0.284
+
+
+           THETA
+              Y1            Y2            Y3
+              ________      ________      ________
+ Y1             1.015
+ Y2             0.000         0.989
+ Y3             0.000         0.000         1.551
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3
+              ________      ________      ________
+               -0.266        -0.420         0.000
+
+
+TECHNICAL 3 OUTPUT
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                     1             2             3             4             5
+              ________      ________      ________      ________      ________
+        1   0.449345D-01
+        2   0.108216D-01  0.202502D-01
+        3   0.733063D-02  0.511586D-02  0.261313D-01
+        4   0.311230D-01  0.182687D-02 -0.488620D-03  0.551161D-01
+        5   0.896776D-02  0.114536D-01  0.705047D-02 -0.124078D-03  0.293018D-01
+        6   0.120590D-01  0.898920D-02  0.170236D-01  0.197762D-04  0.108151D-01
+        7   0.103022D-01 -0.425797D-02 -0.178904D-02  0.159483D-01 -0.444020D-02
+        8   0.678920D-02  0.575905D-02  0.482725D-03  0.264668D-02  0.450125D-02
+        9   0.504519D-02  0.171224D-02  0.220848D-02  0.318313D-02  0.149807D-02
+       10  -0.153238D-01  0.327355D-02  0.286191D-02 -0.191859D-01  0.423245D-02
+       11   0.360149D-02  0.332550D-02  0.345807D-03  0.108621D-02  0.229394D-02
+       12   0.110287D-01  0.589642D-02  0.363429D-02  0.590703D-02  0.529096D-02
+       13   0.826276D-02  0.725702D-02  0.809120D-02  0.331730D-03  0.764402D-02
+       14   0.704438D-02  0.101844D-02  0.384161D-02  0.389274D-02  0.161771D-02
+       15   0.245024D-01  0.176377D-01  0.485594D-02  0.961457D-02  0.149035D-01
+       16  -0.135340D-01 -0.140833D-01 -0.118893D-01  0.401995D-03 -0.139014D-01
+       17   0.417363D-04  0.268674D-02 -0.215090D-02 -0.172392D-03 -0.148940D-02
+       18  -0.165725D-01 -0.141763D-01  0.485671D-02 -0.637848D-02 -0.107354D-01
+       19   0.550548D-01  0.305859D-01  0.225386D-01  0.275828D-01  0.281465D-01
+       20   0.260173D-01  0.248920D-01  0.133399D-01  0.164592D-02  0.224580D-01
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                     6             7             8             9            10
+              ________      ________      ________      ________      ________
+        6   0.686510D-01
+        7  -0.554065D-02  0.496246D-01
+        8   0.333875D-02 -0.798407D-02  0.244239D-01
+        9   0.299597D-02  0.918034D-03  0.572389D-02  0.291085D-01
+       10   0.564608D-02 -0.403170D-01  0.552149D-02 -0.248945D-02  0.728860D-01
+       11   0.241599D-02 -0.428590D-02  0.884249D-02  0.304663D-02  0.273818D-02
+       12   0.475728D-02 -0.216095D-02  0.118008D-01  0.237019D-01  0.128866D-02
+       13   0.110592D-01 -0.176434D-02 -0.154571D-02 -0.444576D-02  0.251704D-02
+       14   0.583733D-02 -0.294076D-02  0.558750D-03  0.386453D-02  0.136273D-02
+       15   0.143940D-01 -0.193687D-01  0.193082D-01  0.653390D-02  0.129678D-01
+       16  -0.179761D-01 -0.386811D-05 -0.108763D-01 -0.113445D-01 -0.269874D-02
+       17  -0.211234D-02 -0.177311D-02  0.488709D-02  0.340280D-03  0.140740D-02
+       18  -0.110953D-01  0.206223D-01 -0.165204D-01  0.679466D-02 -0.154507D-01
+       19   0.369534D-01 -0.775174D-02  0.226344D-01  0.155567D-01 -0.628069D-03
+       20   0.273105D-01 -0.432877D-01  0.344124D-01  0.248485D-01  0.345705D-01
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                    11            12            13            14            15
+              ________      ________      ________      ________      ________
+       11   0.244318D-01
+       12   0.519171D-02  0.677317D-01
+       13  -0.833631D-03 -0.496233D-02  0.161035D-01
+       14   0.373244D-03  0.648047D-02  0.165661D-02  0.935710D-02
+       15   0.107688D-01  0.198472D-01  0.649800D-02  0.866526D-02  0.582903D-01
+       16  -0.623461D-02 -0.214504D-01 -0.739113D-02 -0.554607D-02 -0.252562D-01
+       17   0.241582D-03  0.182829D-02 -0.100836D-02 -0.196237D-02  0.395629D-02
+       18  -0.902473D-02 -0.107719D-01 -0.444333D-02 -0.461177D-02 -0.445599D-01
+       19   0.126045D-01  0.331900D-01  0.204628D-01  0.160251D-01  0.664974D-01
+       20   0.191649D-01  0.478200D-01  0.369921D-02  0.159807D-01  0.757340D-01
+
+
+           ESTIMATED COVARIANCE MATRIX FOR PARAMETER ESTIMATES
+                    16            17            18            19            20
+              ________      ________      ________      ________      ________
+       16   0.451173D-01
+       17  -0.134596D-02  0.153764D-01
+       18   0.139607D-01 -0.506685D-02  0.106113D+00
+       19  -0.488381D-01  0.202927D-02 -0.461183D-01  0.134749D+00
+       20  -0.455951D-01  0.574740D-02 -0.577395D-01  0.103289D+00  0.155657D+00
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                     1             2             3             4             5
+              ________      ________      ________      ________      ________
+        1       1.000
+        2       0.359         1.000
+        3       0.214         0.222         1.000
+        4       0.625         0.055        -0.013         1.000
+        5       0.247         0.470         0.255        -0.003         1.000
+        6       0.217         0.241         0.402         0.000         0.241
+        7       0.218        -0.134        -0.050         0.305        -0.116
+        8       0.205         0.259         0.019         0.072         0.168
+        9       0.140         0.071         0.080         0.079         0.051
+       10      -0.268         0.085         0.066        -0.303         0.092
+       11       0.109         0.150         0.014         0.030         0.086
+       12       0.200         0.159         0.086         0.097         0.119
+       13       0.307         0.402         0.394         0.011         0.352
+       14       0.344         0.074         0.246         0.171         0.098
+       15       0.479         0.513         0.124         0.170         0.361
+       16      -0.301        -0.466        -0.346         0.008        -0.382
+       17       0.002         0.152        -0.107        -0.006        -0.070
+       18      -0.240        -0.306         0.092        -0.083        -0.193
+       19       0.708         0.586         0.380         0.320         0.448
+       20       0.311         0.443         0.209         0.018         0.333
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                     6             7             8             9            10
+              ________      ________      ________      ________      ________
+        6       1.000
+        7      -0.095         1.000
+        8       0.082        -0.229         1.000
+        9       0.067         0.024         0.215         1.000
+       10       0.080        -0.670         0.131        -0.054         1.000
+       11       0.059        -0.123         0.362         0.114         0.065
+       12       0.070        -0.037         0.290         0.534         0.018
+       13       0.333        -0.062        -0.078        -0.205         0.073
+       14       0.230        -0.136         0.037         0.234         0.052
+       15       0.228        -0.360         0.512         0.159         0.199
+       16      -0.323         0.000        -0.328        -0.313        -0.047
+       17      -0.065        -0.064         0.252         0.016         0.042
+       18      -0.130         0.284        -0.325         0.122        -0.176
+       19       0.384        -0.095         0.395         0.248        -0.006
+       20       0.264        -0.493         0.558         0.369         0.325
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                    11            12            13            14            15
+              ________      ________      ________      ________      ________
+       11       1.000
+       12       0.128         1.000
+       13      -0.042        -0.150         1.000
+       14       0.025         0.257         0.135         1.000
+       15       0.285         0.316         0.212         0.371         1.000
+       16      -0.188        -0.388        -0.274        -0.270        -0.492
+       17       0.012         0.057        -0.064        -0.164         0.132
+       18      -0.177        -0.127        -0.107        -0.146        -0.567
+       19       0.220         0.347         0.439         0.451         0.750
+       20       0.311         0.466         0.074         0.419         0.795
+
+
+           ESTIMATED CORRELATION MATRIX FOR PARAMETER ESTIMATES
+                    16            17            18            19            20
+              ________      ________      ________      ________      ________
+       16       1.000
+       17      -0.051         1.000
+       18       0.202        -0.125         1.000
+       19      -0.626         0.045        -0.386         1.000
+       20      -0.544         0.117        -0.449         0.713         1.000
+
+
+     Beginning Time:  19:34:18
+        Ending Time:  19:34:19
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2017 Muthen & Muthen

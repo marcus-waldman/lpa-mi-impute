@@ -1,0 +1,3 @@
+- Mplus doesn't seem capable of creating plausible values. 
+- It doesn't allow for a class-varying, fully parameterized covariance matrix. 
+- It doesn't allow one to regress c on X. 
